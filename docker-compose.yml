@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: .
+    container_name: koa-knex-realworld-example-api
+    command: npm run start
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - db:/usr/src/app/data
+
+volumes:
+  db:
+
+
